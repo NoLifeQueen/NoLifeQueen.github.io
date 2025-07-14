@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current Date & Time</title>
+    <style>
+        body {
+            background-color: rgb(250,249,251); /* #faf9fb #f0f0f0 */
+            font-family: Arial,sans-serif; /* Arial,sans-serif Sets Arial as the primary font, with sans-serif as a fallback */
+            display: block; /* flex Centers the content vertically and horizontally */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        #datetime {
+            font-weight: 700;
+            font-size: 100px; /* Makes the font size larger for better visibility */
+/*            font-style: italic; */
+            color: #333; /* Sets a dark grey color for the text */
+        }
+
+        .gif-container {
+            /* Optional: You can add styles to the container if needed */
+        }
+
+        .centered-gif {
+            max-width: 100%; /* Ensures the GIF is responsive and doesn't overflow its container */
+            height: auto; /* Maintains the aspect ratio of the GIF */
+            display: block; /* Treats the image as a block-level element for better centering control */
+            margin: 0 auto; /* Horizontally centers the block-level GIF within its parent */
+        }
+    </style>
+</head>
+
+
+<body>
+
+ </br></br></br></br></br></br> 
+
+    <div class="gif-container">
+        <img class="centered-gif" src="https://i.imgur.com/EjmqeJH.gif" alt="A dancing cat GIF"> <!-- Replace with your GIF URL -->
+    </div>
+
+ </br></br></br>
+
+    <div id="datetime"></div>
+
+    <script>
+        // Function to update the date and time
+        function updateDateTime() {
+            const now = new Date(); // Creates a new Date object for the current date and time
+            const options = {
+//                year: 'numeric',
+//                month: 'long',
+//                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true, // Displays time in 12-hour format with AM/PM
+            };
+            const formattedDateTime = now.toLocaleString('en-US', options); // Formats the date and time according to US locale and specified options
+            document.getElementById('datetime').textContent = formattedDateTime; // Updates the content of the 'datetime' div
+        }
+
+        // Call the function initially to display the time immediately
+        updateDateTime();
+
+        // Update the time every second (1000 milliseconds)
+        setInterval(updateDateTime, 1000);
+    </script>
+
+</br></br>
+
+        <img class="centered-gif" src="https://i.imgur.com/t2WHM8e.gif" alt="A dancing cat GIF"> <!-- Replace with your GIF URL -->
+
+
+</body>
+
+</html>
